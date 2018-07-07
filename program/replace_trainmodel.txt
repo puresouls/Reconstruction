@@ -1,0 +1,19 @@
+#!/bin/bash
+echo "start !"
+for val in 1 2 3 4 5
+do
+	java -jar RankLib.jar -train /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/train_1.txt -validate /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/vali_1.txt -ranker 6 -norm linear -metric2t NDCG@5 -metric2T NDCG@5 -save /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/LambdaMARTmodel@5_1.txt
+    java -jar RankLib.jar -train /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/train.txt -validate /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/vali.txt -ranker 6 -norm linear -metric2t NDCG@5 -metric2T NDCG@5 -save /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/LambdaMARTmodel@5_1.txt
+    java -jar RankLib.jar -train /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/train_1.txt -validate /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/vali_1.txt -ranker 1 -norm linear -epoch 50 -metric2t NDCG@5 -metric2T NDCG@5 -save /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/RankNet_1.txt
+    java -jar RankLib.jar -train /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/train.txt -validate /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/vali.txt -ranker 1 -norm linear -epoch 50 -metric2t NDCG@5 -metric2T NDCG@5 -save /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/RankNet_1.txt
+    java -jar RankLib.jar -train /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/train_1.txt -validate /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/vali_1.txt -ranker 7 -norm linear -epoch 500 -metric2t NDCG@5 -metric2T NDCG@5 -save /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/ListNet_1.txt
+    java -jar RankLib.jar -train /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/train.txt -validate /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/vali.txt -ranker 7 -norm linear -epoch 500 -metric2t NDCG@5 -metric2T NDCG@5 -save /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/ListNet_1.txt
+    java -jar RankLib.jar -train /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/train_1.txt -validate /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/vali_1.txt -ranker 8 -norm linear -metric2t NDCG@5 -metric2T NDCG@5 -save /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/Forests_1.txt
+    java -jar RankLib.jar -train /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/train.txt -validate /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/vali.txt -ranker 8 -norm linear -metric2t NDCG@5 -metric2T NDCG@5 -save /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/Forests_1.txt
+    java -jar RankLib.jar -train /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/train_2.txt -validate /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/vali_2.txt -ranker 6 -norm linear -metric2t NDCG@5 -metric2T NDCG@5 -save /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/LambdaMARTmodel@5_2.txt
+    java -jar RankLib.jar -train /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/train_2.txt -validate /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/vali_2.txt -ranker 1 -norm linear -epoch 50 -metric2t NDCG@5 -metric2T NDCG@5 -save /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/RankNet_2.txt
+    java -jar RankLib.jar -train /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/train_2.txt -validate /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/vali_2.txt -ranker 7 -norm linear -epoch 500 -metric2t NDCG@5 -metric2T NDCG@5 -save /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/ListNet_2.txt
+    java -jar RankLib.jar -train /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/train_2.txt -validate /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/vali_2.txt -ranker 8 -norm linear -metric2t NDCG@5 -metric2T NDCG@5 -save /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/Forests_2.txt
+    echo "finished one fold"
+done
+echo "end !"

@@ -1,0 +1,70 @@
+#!/bin/bash
+echo "start !"
+for val in 1 2 3 4 5
+do
+	java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/LambdaMARTmodel@5_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/test.txt -norm linear -metric2T NDCG@1 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/LambdaMARTmodel@5_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/test.txt -norm linear -metric2T NDCG@3 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/LambdaMARTmodel@5_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/test.txt -norm linear -metric2T NDCG@5 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/LambdaMARTmodel@5_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/test.txt -norm linear -metric2T NDCG@10 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/LambdaMARTmodel@5_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_1.txt -norm linear -metric2T NDCG@1 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/LambdaMARTmodel@5_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_1.txt -norm linear -metric2T NDCG@3 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/LambdaMARTmodel@5_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_1.txt -norm linear -metric2T NDCG@5 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/LambdaMARTmodel@5_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_1.txt -norm linear -metric2T NDCG@10 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/RankNet_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/test.txt -norm linear -metric2T NDCG@1 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/RankNet_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/test.txt -norm linear -metric2T NDCG@3 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/RankNet_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/test.txt -norm linear -metric2T NDCG@5 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/RankNet_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/test.txt -norm linear -metric2T NDCG@10 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/RankNet_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_1.txt -norm linear -metric2T NDCG@1 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/RankNet_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_1.txt -norm linear -metric2T NDCG@3 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/RankNet_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_1.txt -norm linear -metric2T NDCG@5 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/RankNet_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_1.txt -norm linear -metric2T NDCG@10 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/ListNet_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/test.txt -norm linear -metric2T NDCG@1 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/ListNet_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/test.txt -norm linear -metric2T NDCG@3 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/ListNet_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/test.txt -norm linear -metric2T NDCG@5 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/ListNet_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/test.txt -norm linear -metric2T NDCG@10 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/ListNet_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_1.txt -norm linear -metric2T NDCG@1 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/ListNet_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_1.txt -norm linear -metric2T NDCG@3 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/ListNet_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_1.txt -norm linear -metric2T NDCG@5 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/ListNet_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_1.txt -norm linear -metric2T NDCG@10 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/Forests_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/test.txt -norm linear -metric2T NDCG@1 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/Forests_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/test.txt -norm linear -metric2T NDCG@3 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/Forests_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/test.txt -norm linear -metric2T NDCG@5 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/Forests_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_OR/Fold$val/test.txt -norm linear -metric2T NDCG@10 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/Forests_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_1.txt -norm linear -metric2T NDCG@1 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/Forests_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_1.txt -norm linear -metric2T NDCG@3 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/Forests_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_1.txt -norm linear -metric2T NDCG@5 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/Forests_1.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_1.txt -norm linear -metric2T NDCG@10 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/LambdaMARTmodel@5_2.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_2.txt -norm linear -metric2T NDCG@1 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/LambdaMARTmodel@5_2.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_2.txt -norm linear -metric2T NDCG@3 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/LambdaMARTmodel@5_2.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_2.txt -norm linear -metric2T NDCG@5 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/LambdaMARTmodel@5_2.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_2.txt -norm linear -metric2T NDCG@10 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/RankNet_2.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_2.txt -norm linear -metric2T NDCG@1 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/RankNet_2.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_2.txt -norm linear -metric2T NDCG@3 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/RankNet_2.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_2.txt -norm linear -metric2T NDCG@5 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/RankNet_2.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_2.txt -norm linear -metric2T NDCG@10 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/ListNet_2.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_2.txt -norm linear -metric2T NDCG@1 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/ListNet_2.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_2.txt -norm linear -metric2T NDCG@3 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/ListNet_2.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_2.txt -norm linear -metric2T NDCG@5 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/ListNet_2.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_2.txt -norm linear -metric2T NDCG@10 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/Forests_2.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_2.txt -norm linear -metric2T NDCG@1 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/Forests_2.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_2.txt -norm linear -metric2T NDCG@3 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/Forests_2.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_2.txt -norm linear -metric2T NDCG@5 >> evaluate_result.txt
+    java -jar RankLib.jar -load /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/Forests_2.txt -test /usr/licheng/LTR/MSLR-WEB10K_GROUP/Fold$val/test_2.txt -norm linear -metric2T NDCG@10 >> evaluate_result.txt
+    echo "finished one fold"
+done
+echo "end !"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
